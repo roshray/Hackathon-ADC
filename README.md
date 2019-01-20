@@ -1,48 +1,45 @@
-# Handwriting OCR
-The project tries to create software for recognition of a handwritten text from photos (also for Czech language). It uses computer vision and machine learning. And it experiments with different approaches to the problem. It started as a school project which I got a chance to present on Intel ISEF 2018.
+# Demo of Handwriting Analysis using Machine Learning
 
-<p align="center"><img src ="doc/imgs/poster.png?raw=true" height="340" alt="Sublime's custom image" /></p>
+PLease Follow the Instructions:
 
-## Program Structure
-Proces of recognition is divided into 4 steps. The initial input is a photo of page with text.
+### 1.Make Sure Environemental setup is done.Creating a new conda Environment using the file environment.yml will be good to avoid the conflict.
 
-1. Detection of page and removal of background
-2. Detection and separation of words
-3. Normalization of words
-4. Separation and recegnition of characters (recognition of words)
+### 2.Download the Trained Model:
+[Models](https://drive.google.com/open?id=1H1isE1lKPPub0b8ZUR8JkSbY_N7V2r7X)
 
-Main files combining all the steps are [OCR.ipynb](notebooks/OCR.ipynb) or [OCR-Evaluator.ipynb](notebooks/ocr_evaluator.ipynb). Naming of files goes by step representing - name of machine learning model.
+### 3.Check the models are present under `models` folder.
 
-## Getting Started
-### 1. Clone the repository
-```
-git clone https://github.com/Breta01/handwriting-ocr.git
-```
-After downloading the repo, you have to download the datasets and models (for more info look into [data](data/) and [models](models/) folders).
+    (HML) roshan@roshan-ThinkPad-T440p:~/Submision/models$ ls
+    char-clas  freeze_graph.py  gap-clas  graph_optimizer.py  word-clas
 
-### 2. Requirements
-The project is created using Python 3.6 with Jupyter Notebook. I recommend using Anaconda. If you have it, you can run the installation as:
-```
-conda create --name ocr-env --file environment.yml
-conda activate ocr-env
-```
-Main libraries (all required libraries are in [environment.yml](environment.yml)):
-* Numpy (1.13)
-* Tensorflow (1.4)
-* OpenCV (3.1)
-* Pandas (0.21)
-* Matplotlib (2.1)
+    here, char-clas ,gap-clas and word-clas is the Trained-model.
 
-### Run
-With all required libraries installed and cloned repo, run `jupyter notebook` in the directory of the project. Then you can work on the particular notebook.
+### 4.Back to same Submision Folder and launch Jupyter lab.
 
-## Contributing
-Best way how to get involved is through creating [GitHub issues](https://github.com/Breta01/handwriting-ocr/issues) or solving one! If there aren't any issues you can contact me directly on email.
+    (HML) roshan@roshan-ThinkPad-T440p:~/Submision$ jupyter lab
 
-## License
-**MIT**
+### 5.Go to notebooks and start the OCR.ipynb and select your kernel.$
+    
+    For ex. Python[conda env:HML)
 
-## Support the project
-If this project helped you or you want to support quick answers to questions and issues. Or you just think it is an interesting project. Please consider a small donation.
+### 6.Press Shift+Enter all along.
 
-[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://paypal.me/bretahajek/2)
+### 7.In the second cell,you can use the Image from the `data` folder.Please refer below.
+
+    (HML) roshan@roshan-ThinkPad-T440p:~/Submision/data/pages$ ls
+
+        page01.jpg  page03.jpg  page05.jpg  page07.jpg  page09.jpg  test1.jpg  test3.jpg  test5.jpg  text22.jpeg  text3.jpg  text52.jpg  textlyrics.jpg
+        page02.jpg  page04.jpg  page06.jpg  page08.jpg  page10.jpg  test2.jpg  test4.jpg  text1.jpg  text2.jpg    text4.jpg  text5.jpg
+
+### 8.Finally step all along will be: 
+                
+                1.Load the Image 
+                2.Crop the Image and detect Bounding boxes 
+                3.And Recognize the Words from the text.
+                
+## Source Code:
+
+[SourceCode](https://drive.google.com/open?id=1cW6qeRI__o9bb6WrApip7BrXqqrA_qne)
+
+## DEMO VIDEO
+[Demo](https://youtu.be/AoCWl9N_2A4)
