@@ -18,7 +18,7 @@ PLease Follow the Instructions:
 
     (HML) roshan@roshan-ThinkPad-T440p:~/Submision$ jupyter lab
 
-### 5.Go to notebooks and start the OCR.ipynb and select your kernel.$
+### 5.Go to notebooks and start the OCR.ipynb and select your kernel.
     
     For ex. Python[conda env:HML)
 
